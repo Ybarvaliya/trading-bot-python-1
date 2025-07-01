@@ -18,16 +18,56 @@ A simple modular trading bot with a backtesting engine written in Python. It fet
 ## 🗂️ Project Structure
 
 trading-bot/
-│── backtester.py # Backtesting logic
-│── bot.py # Live trading loop using yfinance
-|── trading_api.py # api for fetching price data and executing order
-├── strategies
-│     ─ SMAStrategy # SMA crossover strategy class
-├── main.py # Run live bot
-└── README.md
+- backtester.py (Backtesting logic)
+- bot.py (Live trading loop using yfinance)
+- trading_api.py (api for fetching price data and executing order)
+- strategies/SMAStrategy (SMA crossover strategy class)
+- main.py (Run live bot)
+- README.md
 
 
 ---
+
+
+### Bot Logic
+
+- Fetches price using yfinance
+- Generates signal using strategy
+- Executes trade via TradingAPI (mock)
+
+### Backtesting
+
+- Simulates trades based on historical data
+- Evaluates performance (PnL, trades, win/loss)
+
+### Getting Started
+
+1. Clone the repository
+- git clone https://github.com/yourusername/trading-bot.git
+- cd trading-bot
+
+2. Install dependencies
+- pip install -r requirements.txt
+
+3. Run backtest
+- python run_backtest.py
+
+4. Run live bot (uses yfinance live price)
+- python run_live.py
+
+### Example Output
+
+- Current price: 183.12
+- Generated signal: buy
+- Bought 1 shares at $183.12
+- Remaining balance: 9816.88
+
+### Requirements
+
+- Python 3.8+
+- yfinance
+- pandas
+- matplotlib (optional for plotting)
 
 ## ⚙️ How It Works
 
@@ -42,44 +82,3 @@ elif short_avg < long_avg:
     return "sell"
 else:
     return "hold"
-
-
-🏗️ Bot Logic
-
-Fetches price using yfinance
-Generates signal using strategy
-Executes trade via TradingAPI (mock)
-
-📈 Backtesting
-
-Simulates trades based on historical data
-Evaluates performance (PnL, trades, win/loss)
-
-🚀 Getting Started
-
-1. Clone the repository
-git clone https://github.com/yourusername/trading-bot.git
-cd trading-bot
-
-2. Install dependencies
-pip install -r requirements.txt
-
-3. Run backtest
-python run_backtest.py
-
-4. Run live bot (uses yfinance live price)
-python run_live.py
-
-🧪 Example Output
-
-Current price: 183.12
-Generated signal: buy
-Bought 1 shares at $183.12
-Remaining balance: 9816.88
-
-📚 Requirements
-
-Python 3.8+
-yfinance
-pandas
-matplotlib (optional for plotting)
